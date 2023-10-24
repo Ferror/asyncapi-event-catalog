@@ -1,0 +1,1 @@
+(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[1904],{46339:function(n,_,u){(window.__NEXT_P=window.__NEXT_P||[]).push(["/events/[name]",function(){return u(39282)}])}},function(n){n.O(0,[5454,148,2505,8033,2749,4056,3048,6707,6387,5298,5618,3636,2862,9282,9774,2888,179],(function(){return _=46339,n(n.s=_);var _}));var _=n.O();_N_E=_}]);
