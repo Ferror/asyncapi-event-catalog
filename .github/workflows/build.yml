@@ -2,9 +2,12 @@ name: Build Catalog
 
 on:
   push:
-    paths-ignore:
-      - '*.md'
+    branches:
+      - master
   workflow_dispatch: ~
+
+permissions:
+  contents: write
 
 jobs:
   tests:
@@ -27,16 +30,24 @@ jobs:
           cp payment-service/asyncapi.yaml catalog/asyncapi/payment-service.yaml
 
       - # Generate Catalog from Async API files
-        name: Generate Catalog
+        name: Install Dependencies
         run: cd catalog && npm install
 
       - # Generate Catalog from Async API files
         name: Generate Catalog
         run: cd catalog && npm run generate
 
-      - # Generate Catalog from Async API files
-        name: Generate Catalog
+      -
+        name: Build Production Catalog
         run: cd catalog && npm run build
 
-      # Generate Catalog from Async API files
-      # Build Image...
+      -
+        name: Add .nojekyll file to catalog
+        run: cd catalog/out/ && touch .nojekyll
+
+      -
+        name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: catalog/out/ # The folder the action should deploy.
+          branch: website # The branch the action should deploy.
