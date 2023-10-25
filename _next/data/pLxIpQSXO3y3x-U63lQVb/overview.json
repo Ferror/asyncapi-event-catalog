@@ -1,0 +1,1 @@
+{"pageProps":{"events":[{"name":"userSignedUp","version":"1.0.0","summary":"Inform about a new user registration in the system","domain":"GeneratedDomain","producerNames":["Payment Service","Account Service"],"consumerNames":[],"owners":[],"externalLinks":[],"badges":[],"tags":[],"historicVersions":["1.0.0"]}],"services":["Payment Service","Account Service"]},"__N_SSG":true}
